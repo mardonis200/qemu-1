@@ -311,6 +311,7 @@ libqemuutil = static_library('qemuutil',
 qemuutil = declare_dependency(link_with: libqemuutil,
                               sources: genh + version_res)
 
+subdir('qom')
 subdir('fsdev')
 
 # Other build targets
