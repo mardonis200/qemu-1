@@ -8450,6 +8450,7 @@ NINJA=$PWD/ninjatool $python $meson setup \
         --localstatedir "$local_statedir" \
         $(test "$strip_opt" = yes && echo --strip) \
         $meson_buildtype \
+        -Db_pie=$(if test "$pie" = yes; then echo true; else echo false; fi) \
         $cross_arg \
         "$PWD" "$source_path"
 
