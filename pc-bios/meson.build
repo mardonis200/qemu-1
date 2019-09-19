@@ -26,6 +26,7 @@ if 'DECOMPRESS_EDK2_BLOBS' in config_host
 endif
 
 subdir('descriptors')
+subdir('keymaps')
 
 blobs = files(
   'QEMU,cgthree.bin',
