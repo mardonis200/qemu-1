@@ -200,7 +200,7 @@ distclean: clean
 	rm -f config-host.mak config-host.h*
 	rm -f tests/tcg/config-*.mak
 	rm -f config-all-disas.mak config.status
-	rm -f po/*.mo tests/qemu-iotests/common.env
+	rm -f tests/qemu-iotests/common.env
 	rm -f roms/seabios/config.mak roms/vgabios/config.mak
 	rm -f qemu-plugins-ld.symbols qemu-plugins-ld64.symbols
 	rm -f config.log
@@ -215,9 +215,6 @@ endif
 endif
 
 install: all install-localstatedir
-ifdef CONFIG_GTK
-	$(MAKE) -C po $@
-endif
 
 # Add a dependency on the generated files, so that they are always
 # rebuilt before other object files

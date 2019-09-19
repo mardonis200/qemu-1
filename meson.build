@@ -1095,6 +1095,9 @@ subdir('scripts')
 subdir('pc-bios')
 subdir('tests')
 subdir('docs')
+if 'CONFIG_GTK' in config_host
+  subdir('po')
+endif
 
 if build_docs
   makeinfo = find_program('makeinfo', required: build_docs)
