@@ -1,5 +1,6 @@
 bzip2 = find_program('bzip2')
 
+install_blobs = 'INSTALL_BLOBS' in config_host
 if 'DECOMPRESS_EDK2_BLOBS' in config_host
   fds = [
     'edk2-aarch64-code.fd',
@@ -18,6 +19,8 @@ if 'DECOMPRESS_EDK2_BLOBS' in config_host
                   input: '@0@.bz2'.format(f),
                   capture: true,
                   build_by_default: true,
+                  install: install_blobs,
+                  install_dir: config_host['qemu_datadir'],
                   command: [ bzip2, '-dc', '@INPUT0@' ])
   endforeach
 endif
