@@ -110,5 +110,6 @@ foreach e : keymaps
 endforeach
 
 subdir('shader')
+subdir('icons')
 
 modules += {'ui': ui_modules}
