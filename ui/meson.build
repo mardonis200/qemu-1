@@ -112,4 +112,6 @@ endforeach
 subdir('shader')
 subdir('icons')
 
+install_data('qemu.desktop', install_dir: config_host['qemu_desktopdir'])
+
 modules += {'ui': ui_modules}
