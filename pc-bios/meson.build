@@ -25,6 +25,8 @@ if 'DECOMPRESS_EDK2_BLOBS' in config_host
   endforeach
 endif
 
+subdir('descriptors')
+
 blobs = files(
   'QEMU,cgthree.bin',
   'QEMU,tcx.bin',
