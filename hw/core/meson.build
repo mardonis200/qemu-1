@@ -1,4 +1,4 @@
-common_ss.add(files(
+hwcore_files = files(
   # core qdev-related obj files, also used by *-user:
   'bus.c',
   'cpu.c',
@@ -12,7 +12,12 @@ common_ss.add(files(
   'irq.c',
   'clock.c',
   'qdev-clock.c',
-))
+)
+
+libhwcore = static_library('libhwcore', sources: hwcore_files + genh)
+hwcore = declare_dependency(link_whole: libhwcore)
+
+common_ss.add(hwcore)
 
 common_ss.add(when: 'CONFIG_FITLOADER', if_true: files('loader-fit.c'))
 common_ss.add(when: 'CONFIG_GENERIC_LOADER', if_true: files('generic-loader.c'))
