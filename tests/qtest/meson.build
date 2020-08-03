@@ -230,7 +230,7 @@ foreach dir : target_dirs
   target_base = dir.split('-')[0]
   qtests = get_variable('qtests_' + target_base, []) + qtests_generic
 
-  qtest_env.set('QTEST_QEMU_BINARY', '@0@-softmmu/qemu-system-@0@'.format(target_base))
+  qtest_env.set('QTEST_QEMU_BINARY', './qemu-system-' + target_base)
   
   foreach test : qtests
     # Executables are shared across targets, declare them only the first time we
