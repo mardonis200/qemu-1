@@ -91,6 +91,7 @@ for name, suite in suites.items():
     test_numbers = ' '.join((str(x) for x in suite.tests))
     print('.test.suite-quick.%s := %s' % (name, test_numbers))
     print('.test.suite-slow.%s := $(.test.suite-quick.%s) %s' % (name, name, slow_test_numbers))
+    print('check-build: ' % executables)
     print('.PHONY: check-%s' % name)
     print('.PHONY: check-report-%s.tap' % name)
     print('check: check-%s' % name)
